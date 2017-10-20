@@ -18,7 +18,7 @@ function ISA_menu(){
     );
 
     $items['team_managers/edit/%'] = array(
-        'title' => 'Add team manager',
+        'title' => 'Edit team manager',
         'page callback' => '_edit_manager',
         'access callback' => TRUE,
         'expanded' => TRUE,
@@ -35,6 +35,7 @@ function ISA_menu(){
     return $items;
 }
 
+$GLOBALS['regions'] = array('East Anglia', 'London North', 'London South', 'London West', 'Midlands', 'North', 'South West');
 
 function _add_manager($content = NULL) {
     module_load_include('inc', 'node', 'node.pages');
@@ -48,9 +49,11 @@ function _add_manager($content = NULL) {
     $form = drupal_get_form($type . '_node_form', $node);
     global $user;
     $account = user_load($user->uid);
-    $role = $account->roles[3];
-    if ($role !== 'administrator') {
-        $form['field_area']['und']['#options'] = [1 => 'East Anglia'];
+    if (in_array('regional admin', $account->roles)) {
+        $regionId = $account->field_region['und'][0]['value'];
+        $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+        $regionName = taxonomy_term_load($regionTid)->name;
+        $form['field_area']['und']['#options'] = [$regionTid => $regionName];
     }
     $form['path']['#access'] =
     $form['menu']['#access'] =
@@ -69,6 +72,12 @@ function _add_manager($content = NULL) {
     return $output;
 }
 
+function get_tid_by_name($name) {
+    $term = taxonomy_get_term_by_name($name);
+    $tid = array_shift($term)->tid;
+    return $tid;
+}
+
 function _edit_manager() {
     $nid = arg(2);
     module_load_include('inc', 'node', 'node.pages');
@@ -76,9 +85,11 @@ function _edit_manager() {
     $form = drupal_get_form($node->type . '_node_form', $node);
     global $user;
     $account = user_load($user->uid);
-    $role = $account->roles[3];
-    if ($role !== 'administrator') {
-        $form['field_area']['und']['#options'] = [1 => 'East Anglia'];
+    if (in_array('regional admin', $account->roles)) {
+        $regionId = $account->field_region['und'][0]['value'];
+        $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+        $regionName = taxonomy_term_load($regionTid)->name;
+        $form['field_area']['und']['#options'] = [$regionTid => $regionName];
     }
     $form['path']['#access'] =
     $form['menu']['#access'] =
@@ -132,6 +143,14 @@ function ISA_form_participant_node_form_alter(&$form, &$form_state, $form_id) {
     if ($role !== 'administrator') {
         $form['field_area_participant']['und']['#options'] = [1 => 'East Anglia'];
     }
-    print_r($form_state);
-    print_r($form_state['values']['field_area_participant']);
+//    $form['field_area_participant']['und']['#ajax'] = array(
+//        'callback' => 'ISA_participant_ajax_callback',
+//        'wrapper' => 'field_area_participant',
+//    );
+//    print_r($form);
 }
+
+//function ISA_participant_ajax_callback($form, $form_state){
+//    print_r('qwe');
+//    return $form['field_area_participant'];
+//}
