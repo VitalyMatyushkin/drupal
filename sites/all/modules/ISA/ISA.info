@@ -1,0 +1,3 @@
+name = ISA module
+description = ISA
+core = 7.x

@@ -1,0 +1,137 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: root
+ * Date: 19.10.17
+ * Time: 19:44
+ */
+
+function ISA_menu(){
+
+    $items = array();
+
+    $items['team_managers/add'] = array(
+        'title' => 'Add team manager',
+        'page callback' => '_add_manager',
+        'access callback' => TRUE,
+        'expanded' => TRUE,
+    );
+
+    $items['team_managers/edit/%'] = array(
+        'title' => 'Add team manager',
+        'page callback' => '_edit_manager',
+        'access callback' => TRUE,
+        'expanded' => TRUE,
+    );
+
+    $items['participants/add'] = array(
+        'title' => 'Add participant',
+        'page callback' => '_add_participant',
+        'access callback' => TRUE,
+        'expanded' => TRUE,
+    );
+
+
+    return $items;
+}
+
+
+function _add_manager($content = NULL) {
+    module_load_include('inc', 'node', 'node.pages');
+    $type = 'team_manager';
+    $node = (object)array(
+        'uid' => $GLOBALS['user']->uid,
+        'name' => isset($GLOBALS['user']->name) ? $GLOBALS['user']->name : '',
+        'type' => $type,
+        'language' => LANGUAGE_NONE
+    );
+    $form = drupal_get_form($type . '_node_form', $node);
+    global $user;
+    $account = user_load($user->uid);
+    $role = $account->roles[3];
+    if ($role !== 'administrator') {
+        $form['field_area']['und']['#options'] = [1 => 'East Anglia'];
+    }
+    $form['path']['#access'] =
+    $form['menu']['#access'] =
+    $form['author']['#access'] =
+    $form['comment_settings']['#access'] =
+    $form['revision_information']['#access'] = false;
+    $delete_keys = array('promote', 'sticky');
+    foreach ($form['options'] as $key => $value) {
+        if (in_array($key, $delete_keys)) {
+            unset($form['options'][$key]);
+        }
+    }
+    unset($form['actions']['preview']);
+    $output = render($form);
+
+    return $output;
+}
+
+function _edit_manager() {
+    $nid = arg(2);
+    module_load_include('inc', 'node', 'node.pages');
+    $node = node_load($nid);
+    $form = drupal_get_form($node->type . '_node_form', $node);
+    global $user;
+    $account = user_load($user->uid);
+    $role = $account->roles[3];
+    if ($role !== 'administrator') {
+        $form['field_area']['und']['#options'] = [1 => 'East Anglia'];
+    }
+    $form['path']['#access'] =
+    $form['menu']['#access'] =
+    $form['author']['#access'] =
+    $form['comment_settings']['#access'] =
+    $form['revision_information']['#access'] = false;
+    $delete_keys = array('promote', 'sticky');
+    foreach ($form['options'] as $key => $value) {
+        if (in_array($key, $delete_keys)) {
+            unset($form['options'][$key]);
+        }
+    }
+    unset($form['actions']['preview']);
+    $output = render($form);
+
+    return $output;
+}
+
+function _add_participant($content = NULL) {
+    module_load_include('inc', 'node', 'node.pages');
+    $type = 'participant';
+    $node = (object)array(
+        'uid' => $GLOBALS['user']->uid,
+        'name' => isset($GLOBALS['user']->name) ? $GLOBALS['user']->name : '',
+        'type' => $type,
+        'language' => LANGUAGE_NONE
+    );
+    $form = drupal_get_form($type . '_node_form', $node);
+
+    $form['path']['#access'] =
+    $form['menu']['#access'] =
+    $form['author']['#access'] =
+    $form['comment_settings']['#access'] =
+    $form['revision_information']['#access'] = false;
+    $delete_keys = array('promote', 'sticky');
+    foreach ($form['options'] as $key => $value) {
+        if (in_array($key, $delete_keys)) {
+            unset($form['options'][$key]);
+        }
+    }
+    unset($form['actions']['preview']);
+    $output = render($form);
+
+    return $output;
+}
+
+function ISA_form_participant_node_form_alter(&$form, &$form_state, $form_id) {
+    global $user;
+    $account = user_load($user->uid);
+    $role = $account->roles[3];
+    if ($role !== 'administrator') {
+        $form['field_area_participant']['und']['#options'] = [1 => 'East Anglia'];
+    }
+    print_r($form_state);
+    print_r($form_state['values']['field_area_participant']);
+}
