@@ -31,6 +31,13 @@ function ISA_menu(){
         'expanded' => TRUE,
     );
 
+    $items['participants/edit/%'] = array(
+        'title' => 'Edit participant',
+        'page callback' => '_edit_participant',
+        'access callback' => TRUE,
+        'expanded' => TRUE,
+    );
+
 
     return $items;
 }
@@ -76,6 +83,12 @@ function get_tid_by_name($name) {
     $term = taxonomy_get_term_by_name($name);
     $tid = array_shift($term)->tid;
     return $tid;
+}
+
+function get_name_by_tid($tid) {
+    $term = taxonomy_term_load($tid);
+    $name = $term->name;
+    return $name;
 }
 
 function _edit_manager() {
@@ -136,21 +149,186 @@ function _add_participant($content = NULL) {
     return $output;
 }
 
-function ISA_form_participant_node_form_alter(&$form, &$form_state, $form_id) {
+function _edit_participant($content = NULL) {
+    $nid = arg(2);
+    module_load_include('inc', 'node', 'node.pages');
+    $node = node_load($nid);
+    $form = drupal_get_form($node->type . '_node_form', $node);
     global $user;
     $account = user_load($user->uid);
-    $role = $account->roles[3];
-    if ($role !== 'administrator') {
-        $form['field_area_participant']['und']['#options'] = [1 => 'East Anglia'];
+    if (in_array('regional admin', $account->roles)) {
+        $regionId = $account->field_region['und'][0]['value'];
+        $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+        $regionName = taxonomy_term_load($regionTid)->name;
+        $form['field_area_participant']['und']['#options'] = [$regionTid => $regionName];
     }
-//    $form['field_area_participant']['und']['#ajax'] = array(
-//        'callback' => 'ISA_participant_ajax_callback',
-//        'wrapper' => 'field_area_participant',
-//    );
-//    print_r($form);
+    $form['path']['#access'] =
+    $form['menu']['#access'] =
+    $form['author']['#access'] =
+    $form['comment_settings']['#access'] =
+    $form['revision_information']['#access'] = false;
+    $delete_keys = array('promote', 'sticky');
+    foreach ($form['options'] as $key => $value) {
+        if (in_array($key, $delete_keys)) {
+            unset($form['options'][$key]);
+        }
+    }
+    unset($form['actions']['preview']);
+    $output = render($form);
+
+    return $output;
 }
 
-//function ISA_participant_ajax_callback($form, $form_state){
-//    print_r('qwe');
-//    return $form['field_area_participant'];
-//}
+function ISA_init() {
+    if ($_GET['q'] == 'system/ajax' && preg_match('/^[a-z_]+_node_form/', $_POST['form_id'])) {
+        module_load_include('inc', 'node', 'node.pages');
+    }
+
+    if (current_path() == 'user' && user_is_logged_in()) {
+        drupal_goto('team_managers');
+    }
+}
+
+function ISA_form_participant_node_form_alter(&$form, &$form_state, $form_id) {
+    $form['#prefix'] = '<div id="school_select">';
+    $form['#suffix'] = '</div>';
+    global $user;
+    $account = user_load($user->uid);
+    if (isset($form['#node']->field_school['und'][0]['tid'])) {
+        $tid_school = $form['#node']->field_school['und'][0]['tid'];
+        $school_array = [$tid_school => get_name_by_tid($tid_school)];
+    } else {
+        $school_array = array();
+    }
+    if (in_array('regional admin', $account->roles)) {
+        $regionId = $account->field_region['und'][0]['value'];
+        $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+        $regionName = taxonomy_term_load($regionTid)->name;
+        $form['field_area_participant']['und']['#options'] = [$regionTid => $regionName];
+        $school_array = array();
+        $vid = taxonomy_vocabulary_machine_name_load('schools')->vid;
+        $terms = taxonomy_get_tree($vid);
+        foreach ($terms as $term) {
+            $school_area_tid = taxonomy_term_load($term->tid)->field_area_school['und'][0]['tid'];
+            if ($school_area_tid == $regionTid) {
+                $school_array[$term->tid] = $term->name;
+            }
+        }
+        $form['field_school']['und']['#options'] = $school_array;
+    } else {
+        $form['field_school']['und']['#options'] = $school_array;
+
+        $form['field_area_participant']['und']['#ajax'] = array(
+            'callback' => 'ISA_form_participant_node_form_alter_callback',
+            'wrapper' => 'school_select'
+        );
+
+        if (isset($form_state['values']['field_area_participant'])) {
+            $school_array = array();
+            $area_tid = $form_state['values']['field_area_participant']['und'][0]['tid'];
+            $vid = taxonomy_vocabulary_machine_name_load('schools')->vid;
+            $terms = taxonomy_get_tree($vid);
+            foreach ($terms as $term) {
+                $school_area_tid = taxonomy_term_load($term->tid)->field_area_school['und'][0]['tid'];
+                if ($school_area_tid == $area_tid) {
+                    $school_array[$term->tid] = $term->name;
+                }
+            }
+        }
+
+        $form['field_school']['und']['#options'] = $school_array;
+    }
+    $form['actions']['submit']['#submit'][] = 'ISA_form_participant_node_form_submit';
+}
+
+function ISA_form_participant_node_form_submit($form, &$form_state) {
+    $form_state['redirect'] = 'participants';
+}
+
+function ISA_form_participant_node_form_alter_callback($form, $form_state){
+    $form['path']['#access'] =
+    $form['menu']['#access'] =
+    $form['author']['#access'] =
+    $form['comment_settings']['#access'] =
+    $form['revision_information']['#access'] = false;
+    $delete_keys = array('promote', 'sticky');
+    foreach ($form['options'] as $key => $value) {
+        if (in_array($key, $delete_keys)) {
+            unset($form['options'][$key]);
+        }
+    }
+    unset($form['actions']['preview']);
+    return $form;
+}
+function ISA_form_team_manager_node_form_alter(&$form, &$form_state, $form_id) {
+    $form['actions']['submit']['#submit'][] = 'ISA_form_team_manager_node_form_submit';
+}
+
+function ISA_form_team_manager_node_form_submit($form, &$form_state) {
+    $form_state['redirect'] = 'team_managers';
+}
+/**
+ * @param $view
+ */
+function ISA_views_pre_render(&$view) {
+    if ('team_managers' == $view->name && 'page' == $view->current_display) {
+        if(arg(0) == 'team_managers') {
+            global $user;
+            $account = user_load($user->uid);
+            if (in_array('regional admin', $account->roles)) {
+                $regionId = $account->field_region['und'][0]['value'];
+                $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+                $output = array();
+                foreach($view->result as $item) {
+                    $field_area = field_get_items('node', node_load($item->nid), 'field_area');
+                    if($field_area[0]['tid'] == $regionTid) {
+                        $output[] = $item;
+                    }
+                }
+                $view->result = $output;
+
+            }
+        }
+        $view->result =  ISA_pager_array_splice($view->result, 10);
+    }
+
+    if ('participants' == $view->name && 'page' == $view->current_display) {
+        if(arg(0) == 'participants') {
+            global $user;
+            $account = user_load($user->uid);
+            if (in_array('regional admin', $account->roles)) {
+                $regionId = $account->field_region['und'][0]['value'];
+                $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+                $output = array();
+                foreach($view->result as $item) {
+                    $field_area = field_get_items('node', node_load($item->nid), 'field_area_participant');
+                    if($field_area[0]['tid'] == $regionTid) {
+                        $output[] = $item;
+                    }
+                }
+                $view->result = $output;
+
+            }
+        }
+        $view->result =  ISA_pager_array_splice($view->result, 10);
+    }
+}
+
+/**
+ * Custom
+ * @param $data
+ * @param int $limit
+ * @param int $element
+ * @return array
+ */
+function ISA_pager_array_splice($data, $limit = 9, $element = 0) {
+    global $pager_page_array, $pager_total, $pager_total_items;
+    $page = isset($_GET['page']) ? $_GET['page'] : '';
+    $pager_page_array = explode(',', $page);
+    $pager_total_items[$element] = count($data);
+    $pager_total[$element] = ceil($pager_total_items[$element] / $limit);
+    $pager_page_array[$element] = max(0, min((int)$pager_page_array[$element], ((int)$pager_total[$element]) - 1));
+    return array_slice($data, $pager_page_array[$element] * $limit, $limit, TRUE);
+}
+
+

@@ -27,5 +27,5 @@ function isa_theme_theme() {
 }
 
 function isa_theme_preprocess_user_login(&$vars) {
-    $vars['intro_text'] = t('Login form');
+    $vars['intro_text'] = t('Sign in');
 }

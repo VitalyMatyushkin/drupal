@@ -446,7 +446,7 @@ function date_select_element_value_callback($element, $input = FALSE, &$form_sta
     'second' => '',
   );
   $date = NULL;
-  if ($input !== FALSE) {
+  if ($input !== FALSE && is_array($input)) {
     $return = $input;
     $date = date_select_input_date($element, $input);
   }
