@@ -1,0 +1,109 @@
+html, body {
+    color: #333333;
+    font-family: glober, sans-serif;
+    font-size: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100%;
+}
+
+a {
+    color: #007abf;
+}
+
+a:hover {
+    color: #0c70b0;
+}
+
+/*---HEADER---*/
+.l-header {  }
+
+.l-branding {
+    min-height: 70px;
+}
+
+.l-region--header {
+    text-align: right;
+}
+
+.l-region--header--item {
+    color: #333132;
+    font-size: 1.125rem;
+    line-height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+}
+
+.l-region--header--item:hover {
+    text-decoration: underline;
+}
+
+/*---NAVIGATION---*/
+.l-region--navigation {
+    background-image: linear-gradient(to right, #164170 0%, #0c70b0 100%);
+    font-size: 1.125rem;
+    min-height: 60px;
+    text-align: center;
+    width: 100%;
+}
+
+.menu {
+    text-align: center;
+    padding-inline-start: 0px;
+}
+
+.menu .leaf {
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+}
+
+.menu .leaf a {
+    color: #88adc9;
+    font-size: 1.125rem;
+    line-height: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+}
+
+.menu .leaf a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.menu .leaf a.active {
+    color: #fff;
+}
+
+.site-logo img {
+    width: 180px;
+    padding-top: 10px;
+}
+/*---TABLES---*/
+.views-table {
+    width: 100%;
+}
+
+/*---CONTENT---*/
+.l-main {
+    padding-bottom: 30px;
+}
+
+/*---FOOTER---*/
+.l-footer {
+    background: #f5f5f5;
+    border-top: solid 1px #e6e6e6;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 150px;
+    margin-bottom: 0!important;
+    max-width: 100%!important;
+    padding-top: 60px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}

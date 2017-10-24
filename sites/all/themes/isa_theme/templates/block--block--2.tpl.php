@@ -6,4 +6,4 @@
  * Time: 15:53
  */
 ?>
-<a href="<?= $GLOBALS['base_url'] ?>/user/logout">Logout</a>
+<a class="l-region--header--item" href="<?= $GLOBALS['base_url'] ?>/user/logout">Logout</a>
