@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edf6aa2-e96b-4816-89fb-cf060b27a690" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/logo.png" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/screenshot.png" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/screenshot.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ISA_Registration.iml" afterPath="$PROJECT_DIR$/.idea/ISA_Registration.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/form.inc" afterPath="$PROJECT_DIR$/includes/form.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/ISA/ISA.info" afterPath="$PROJECT_DIR$/sites/all/modules/ISA/ISA.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/ISA/ISA.module" afterPath="$PROJECT_DIR$/sites/all/modules/ISA/ISA.module" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/date/date_api/date_api_elements.inc" afterPath="$PROJECT_DIR$/sites/all/modules/date/date_api/date_api_elements.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/css/README.txt" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/css/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/isa_theme.info" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/isa_theme.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/preprocess/README.txt" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/preprocess/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/process/README.txt" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/process/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/template.php" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/README.txt" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/README.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/user-login.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/user-login.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--team-managers--page--title-1.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--team-managers--page--title-1.tpl.php" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,25 +18,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ISA.module" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ISA.module" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/ISA/ISA.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="332" column="0" lean-forward="true" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+            <state relative-caret-position="466">
+              <caret line="387" column="24" lean-forward="false" selection-start-line="387" selection-start-column="24" selection-end-line="387" selection-end-column="24" />
               <folding>
-                <marker date="1508754497447" expanded="true" signature="1466:1853" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.inc" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/includes/form.inc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="2097" column="96" lean-forward="false" selection-start-line="2097" selection-start-column="96" selection-end-line="2097" selection-end-column="96" />
-              <folding>
-                <marker date="1508754977763" expanded="true" signature="193609:193615" ph=" " />
+                <marker date="1508852459108" expanded="true" signature="1465:1852" ph="..." />
+                <marker date="1508852459108" expanded="true" signature="13149:13402" ph="..." />
               </folding>
             </state>
           </provider>
@@ -67,21 +41,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="download_driver.module" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/download_driver.module">
+      <file leaf-file-name="views-view-field--participants--page--field-dob-1.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--field-dob-1.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1724">
-              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="100" selection-end-column="1" />
+            <state relative-caret-position="253">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="17" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views-view-field--participants--page--field-dob-1.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--field-dob-1.tpl.php">
+      <file leaf-file-name="template.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="460">
+              <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -90,20 +64,8 @@
       <file leaf-file-name="user-login.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/user-login.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <marker date="1508747816693" expanded="true" signature="282:342" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login_destination.module" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/login_destination/login_destination.module">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="300" column="19" lean-forward="false" selection-start-line="300" selection-start-column="7" selection-end-line="300" selection-end-column="19" />
+            <state relative-caret-position="92">
+              <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -119,31 +81,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views-view-field--team-managers--page--title-1.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--team-managers--page--title-1.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views-view-field--participants--page--field-school.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--field-school.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>define('DRUPAL_ROOT', getcwd())</find>
       <find>require_once DRUPAL_ROOT . '/includes/bootstrap.inc';</find>
       <find>&quot;breadcrumb</find>
       <find>ISA_R</find>
@@ -163,6 +111,17 @@
       <find>field_area_participant</find>
       <find>drupal_array_set_nested_value($form_state['input'], $element['#parents'], NULL);</find>
       <find>views_pre_view</find>
+      <find>fo</find>
+      <find>download_driver_user_form</find>
+      <find>academ_create_group</find>
+      <find>agreement_block</find>
+      <find>upda</find>
+      <find>update</find>
+      <find>popupQuestions</find>
+      <find>academ_add_lesson_callback</find>
+      <find>academ_group_edit_table</find>
+      <find>views_view</find>
+      <find>node_load</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/sites/all/themes/isa_theme</dir>
@@ -179,19 +138,21 @@
         <option value="$PROJECT_DIR$/sites/all/modules/ISA/ISA.info" />
         <option value="$PROJECT_DIR$/sites/all/themes/omega/omega/theme/breadcrumb.theme.inc" />
         <option value="$PROJECT_DIR$/sites/all/themes/omega/omega/templates/views/views-view-field--team-managers--page--title-1.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/default/settings.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--field-year-group.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/date/date_api/date_api_elements.inc" />
         <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--title-1.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--field-school.tpl.php" />
         <option value="$PROJECT_DIR$/modules/user/user.module" />
         <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/template.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/user-login.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/node--team_manager.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/node--participant.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/block--block--2.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/modules/ISA/ISA.module" />
         <option value="$PROJECT_DIR$/includes/form.inc" />
+        <option value="$PROJECT_DIR$/sites/default/settings.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/ISA/ISA.js" />
+        <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/block--user--login.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/isa_theme/templates/user-login.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/ISA/ISA.module" />
       </list>
     </option>
   </component>
@@ -224,6 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -248,6 +210,21 @@
               <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ISA" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -265,85 +242,26 @@
               <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="isa_theme" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="isa_theme" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="block" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="all" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="omega" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="node" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="files" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="isa_registration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="isa_registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/download_driver.module" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/forms/download_driver_user_page.inc" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="settings.php.debug.step.filters" />
   </component>
@@ -447,12 +365,13 @@
       <workItem from="1508434592306" duration="76000" />
       <workItem from="1508436546445" duration="19702000" />
       <workItem from="1508682543794" duration="5201000" />
-      <workItem from="1508731052430" duration="21939000" />
+      <workItem from="1508731052430" duration="26484000" />
+      <workItem from="1508819360218" duration="17303000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53147000" />
+    <option name="totallyTimeSpent" value="74995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
@@ -462,7 +381,6 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -474,6 +392,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -490,14 +409,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/ISA/ISA.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
@@ -510,9 +421,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding>
-            <marker date="1508747816693" expanded="true" signature="282:342" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -520,9 +429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="97" selection-end-column="1" />
-          <folding>
-            <marker date="1493194938555" expanded="true" signature="2769:3231" ph="SELECT field... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -539,7 +445,8 @@
         <state relative-caret-position="4710">
           <caret line="157" column="39" lean-forward="false" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
           <folding>
-            <marker date="1508754497447" expanded="true" signature="1466:1853" ph="..." />
+            <marker date="1508852459108" expanded="true" signature="1465:1852" ph="..." />
+            <marker date="1508852459108" expanded="true" signature="13149:13402" ph="..." />
           </folding>
         </state>
       </provider>
@@ -548,7 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -564,7 +470,8 @@
         <state relative-caret-position="738">
           <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
           <folding>
-            <marker date="1508754497447" expanded="true" signature="1466:1853" ph="..." />
+            <marker date="1508852459108" expanded="true" signature="1465:1852" ph="..." />
+            <marker date="1508852459108" expanded="true" signature="13149:13402" ph="..." />
           </folding>
         </state>
       </provider>
@@ -573,7 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -589,7 +495,8 @@
         <state relative-caret-position="738">
           <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
           <folding>
-            <marker date="1508754497447" expanded="true" signature="1466:1853" ph="..." />
+            <marker date="1508852459108" expanded="true" signature="1465:1852" ph="..." />
+            <marker date="1508852459108" expanded="true" signature="13149:13402" ph="..." />
           </folding>
         </state>
       </provider>
@@ -629,14 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/default/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="259" column="4" lean-forward="true" selection-start-line="259" selection-start-column="4" selection-end-line="259" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/default/default.settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8542">
@@ -657,7 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
           <caret line="206" column="31" lean-forward="false" selection-start-line="206" selection-start-column="2" selection-end-line="206" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,9 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="732">
           <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <marker date="1493194938555" expanded="true" signature="2769:3231" ph="SELECT field... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,16 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="64" column="27" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="27" />
-          <folding>
-            <marker date="1491711674234" expanded="true" signature="2283:2371" ph="INSERT INTO drivers_upload... " />
-            <marker date="1491711674234" expanded="true" signature="2564:2592" ph="SELECT * FRO... drivers_upload" />
-            <marker date="1491711674234" expanded="true" signature="3997:4018" ph="SELECT * FRO... drivers" />
-            <marker date="1491711674234" expanded="true" signature="5513:5574" ph="SELECT * FRO... drivers_upload" />
-            <marker date="1491711674234" expanded="true" signature="5682:5797" ph="INSERT INTO drivers_upload... " />
-            <marker date="1491711674234" expanded="true" signature="6094:6122" ph="SELECT * FRO... drivers_upload" />
-            <marker date="1491711674234" expanded="true" signature="6234:6282" ph="DELETE FROM " />
-            <marker date="1491711674234" expanded="true" signature="6374:6433" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -692,15 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/forms/download_driver_user_page.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-262">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,29 +602,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/user-login.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1508747816693" expanded="true" signature="282:342" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/omega/omega/templates/node/node.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,42 +613,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/login_destination/login_destination.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="6831">
           <caret line="300" column="19" lean-forward="false" selection-start-line="300" selection-start-column="7" selection-end-line="300" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/node--participant.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/download_driver.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1724">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="100" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/node--team_manager.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/node--participant.tpl.php" />
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/node--team_manager.tpl.php" />
     <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--team-managers--page--title-1.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -808,11 +642,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--title-1.tpl.php">
+    <entry file="file://$PROJECT_DIR$/includes/form.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        <state relative-caret-position="317">
+          <caret line="2097" column="96" lean-forward="false" selection-start-line="2097" selection-start-column="96" selection-end-line="2097" selection-end-column="96" />
+          <folding>
+            <marker date="1508754977763" expanded="true" signature="193609:193615" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/default/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="253" column="21" lean-forward="false" selection-start-line="253" selection-start-column="21" selection-end-line="253" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/css/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/vitaly/B820D02220CFE60A/OpenServer/domains/sotex/sites/all/modules/globus_modules/gm_news_date/gm_news_date.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="71" column="65" lean-forward="true" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="65" />
+          <folding>
+            <marker date="1493194938555" expanded="true" signature="2769:3231" ph="SELECT field... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Рабочий стол/driver/modules/academ/forms/academ_groups_page.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <marker date="1491124239504" expanded="true" signature="1426:1471" ph="SELECT * FRO... groups" />
+            <marker date="1491124239504" expanded="true" signature="1721:1766" ph="INSERT INTO groups... " />
+            <marker date="1491124239504" expanded="true" signature="2383:2403" ph="SELECT * FRO... groups" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Рабочий стол/driver/modules/academ/academ.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1491125339949" expanded="true" signature="1876:1947" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/js/license_agreement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/forms/download_driver_user_page.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="8" />
+          <folding>
+            <marker date="1491713829093" expanded="true" signature="3214:3518" ph="SELECT drive... drivers_upload" />
+            <marker date="1491713829093" expanded="false" signature="4070:4083" ph="..." />
+            <marker date="1491713829093" expanded="true" signature="4084:4681" ph="..." />
+            <marker date="1491713829093" expanded="true" signature="4132:4214" ph="..." />
+            <marker date="1491713829093" expanded="true" signature="4253:4293" ph="..." />
+            <marker date="1491713829093" expanded="true" signature="4326:4670" ph="..." />
+            <marker date="1491713829093" expanded="true" signature="4506:4655" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/ISA/ISA.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/download_driver.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="92" column="10" lean-forward="false" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="10" />
+          <folding>
+            <marker date="1491713781257" expanded="true" signature="1767:1885" ph="SELECT * FRO... drivers" />
+            <marker date="1491713781257" expanded="true" signature="2113:2223" ph="INSERT INTO drivers... " />
+            <marker date="1491713781257" expanded="true" signature="2444:2560" ph="DELETE FROM " />
+            <marker date="1491713781257" expanded="true" signature="4315:4364" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Рабочий стол/aquantia/sites/all/modules/custom/download_driver/js/update_driver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Рабочий стол/driver/modules/academ/js/academ.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Рабочий стол/driver/modules/academ/forms/academ_groups_edit_page.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="153" column="48" lean-forward="false" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="48" />
+          <folding>
+            <marker date="1491118127824" expanded="true" signature="2362:2397" ph="SELECT * FRO... groups" />
+            <marker date="1491118127824" expanded="true" signature="3723:3776" ph="SELECT tid_l... group_lessons" />
+            <marker date="1491118127824" expanded="true" signature="4082:4258" ph="INSERT INTO group_lessons... " />
+            <marker date="1491118127824" expanded="true" signature="5437:5480" ph="SELECT * FRO... group_lessons" />
+            <marker date="1491118127824" expanded="true" signature="6587:6593" ph=" " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -824,30 +782,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/block--user--login.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/user-login.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--title-1.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/isa_theme/templates/views-view-field--participants--page--field-dob-1.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="253">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="17" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/ISA/ISA.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="332" column="0" lean-forward="true" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+        <state relative-caret-position="466">
+          <caret line="387" column="24" lean-forward="false" selection-start-line="387" selection-start-column="24" selection-end-line="387" selection-end-column="24" />
           <folding>
-            <marker date="1508754497447" expanded="true" signature="1466:1853" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/form.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="2097" column="96" lean-forward="false" selection-start-line="2097" selection-start-column="96" selection-end-line="2097" selection-end-column="96" />
-          <folding>
-            <marker date="1508754977763" expanded="true" signature="193609:193615" ph=" " />
+            <marker date="1508852459108" expanded="true" signature="1465:1852" ph="..." />
+            <marker date="1508852459108" expanded="true" signature="13149:13402" ph="..." />
           </folding>
         </state>
       </provider>

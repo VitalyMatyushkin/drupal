@@ -7,7 +7,6 @@
  */
 
 function ISA_menu(){
-
     $items = array();
 
     $items['team_managers/add'] = array(
@@ -330,5 +329,168 @@ function ISA_pager_array_splice($data, $limit = 9, $element = 0) {
     $pager_page_array[$element] = max(0, min((int)$pager_page_array[$element], ((int)$pager_total[$element]) - 1));
     return array_slice($data, $pager_page_array[$element] * $limit, $limit, TRUE);
 }
+
+/**
+ * Implements hook_block_info().
+ */
+function ISA_block_info() {
+    $blocks = array();
+    $blocks['participants'] = array(
+        'info' => t('Check participants'),
+    );
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ISA_block_view($delta = '') {
+    $block = array();
+
+    if ($delta == 'participants') {
+        $block['content'] = drupal_get_form('ISA_check_form');
+    }
+
+    return $block;
+}
+function ISA_check_form($form, $form_state){
+    $form['check_table'] = array(
+        '#type'   => 'fieldset',
+        '#prefix' => '<div id="errors_list">',
+        '#suffix' => '</div>',
+    );
+
+    $form['check_table']['submit'] = array(
+        '#id'         => 'check_button',
+        '#type'       => 'submit',
+        '#value'      => t('Control'),
+        '#ajax'       => array(
+            'callback' => 'ISA_check_form_callback',
+            'wrapper'  => 'errors_list',
+        ),
+    );
+    $form['check_table']['errors'] = array(
+        '#type'   => 'markup',
+        '#prefix' => '<div id="errors_student">',
+        '#suffix' => '</div>',
+        '#markup' => '',
+    );
+
+    return $form;
+}
+function ISA_check_form_callback($form, &$form_state){
+    $form['check_table']['errors']['#markup'] = _show_errors();
+    return $form['check_table'];
+}
+function _show_errors(){
+    $log = '';
+    $errors = _check_participants();
+    if (count($errors) == 0) {
+        $log = '<div class="error_log">Everything is fine!</div>';
+    } else {
+        foreach ($errors as $error) {
+            $log = $log . '<div class="error_log">'.$error.'</div>';
+        }
+    }
+    return $log;
+}
+function _check_participants() {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node');
+    $query->propertyCondition('status', 1);
+    $query->propertyCondition('type', 'participant');
+    $result = $query->execute();
+    $nodes = node_load_multiple(array_keys($result['node']));
+    $nodes2 = $nodes;
+    $res = array();
+    $helper_sport = array();
+    foreach ($nodes as $key => $part){
+        foreach ($nodes2 as $key2 => $part2){
+            if ($key < $key2){
+                $fname = $part->title;
+                $lname =$part-> field_last_name['und'][0]['value'];
+                $school_tid = $part->field_school['und'][0]['tid'];
+                $dob = $part->field_dob['und'][0]['value'];
+                if ($fname == $part2->title &&
+                    $lname == $part2->field_last_name['und'][0]['value'] &&
+                    $school_tid == $part2->field_school['und'][0]['tid'] &&
+                    $dob != $part2->field_dob['und'][0]['value']
+                ) {
+                    $lname = $part2->field_last_name['und'][0]['value'];
+                    $school = taxonomy_term_load($part2->field_school['und'][0]['tid'])->name;
+                    $dob1 =  date('d/m/Y', strtotime($part->field_dob['und'][0]['value']));
+                    $dob2 =  date('d/m/Y', strtotime($part2->field_dob['und'][0]['value']));
+                    array_push($res, "Same name and school, but different DOB. $part2->title $lname  $school. $dob1 and $dob2");
+                }
+                if ($fname == $part2->title &&
+                    $lname == $part2->field_last_name['und'][0]['value'] &&
+                    $school_tid == $part2->field_school['und'][0]['tid'] &&
+                    $dob == $part2->field_dob['und'][0]['value']
+                ) {
+                    $sport = taxonomy_term_load($part->field_competition['und'][0]['tid'])->name;
+                    $is_individ = _is_individual_sport($sport);
+                    $is_relay = _is_relay($sport);
+                    $index = _check_stud($helper_sport, $fname, $lname, $school_tid, $dob);
+                    if ($index != -1) {
+                        if (!in_array($key, $helper_sport[$index]['keys']) && !in_array($key2, $helper_sport[$index]['keys'])) {
+                            if ($is_individ) {
+                                $helper_sport[$index]['individ_count'] += 1;
+                            }
+                            if ($is_relay) {
+                                $helper_sport[$index]['relay_count'] += 1;
+                            }
+                            array_push($helper_sport[$index]['keys'], $key2);
+                        }
+                    } else {
+                        $ind = $is_individ ? 1 : 0;
+                        $rel = $is_relay ? 1 : 0;
+                        $sport2= taxonomy_term_load($part2->field_competition['und'][0]['tid'])->name;
+                        $is_individ2 = _is_individual_sport($sport2);
+                        $is_relay2 = _is_relay($sport2);
+                        $ind = $is_individ2 ? $ind+1 : $ind;
+                        $rel = $is_relay2 ? $rel+1 : $rel;
+                        array_push($helper_sport, array('fname' => $fname, 'lname' =>$lname, 's_tid' => $school_tid, 'dob' => $dob,
+                            'individ_count' => $ind, 'relay_count' => $rel, 'keys' => array($key2)));
+                    }
+                }
+            }
+        }
+    }
+    foreach ($helper_sport as $stud) {
+        $school = taxonomy_term_load($stud['s_tid'])->name;
+        if ($stud['individ_count'] > 2) {
+            array_push($res, "More than two individual sports. $stud[fname] $stud[lname] $school. Individuals: $stud[individ_count].");
+        }
+        if ($stud['relay_count'] > 2) {
+            array_push($res, "More than two relay sports. $stud[fname] $stud[lname] $school. Relays: $stud[relay_count].");
+        }
+    }
+   return $res;
+}
+
+function _check_stud($arr, $fname, $lname, $school_tid, $dob) {
+    foreach ($arr as $key => $stud) {
+        if (
+            $stud['fname']  == $fname &&
+            $stud['lname']  == $lname &&
+            $stud['s_tid']  == $school_tid &&
+            $stud['dob']    == $dob
+        ) {
+            return $key;
+        }
+    }
+    return -1;
+}
+
+function _is_individual_sport($sport) {
+    $individual_sports = array('Breaststroke', 'Backstroke', 'Freestyle');
+    return in_array($sport, $individual_sports);
+}
+
+function _is_relay($sport) {
+    $relays = array('Breaststroke Relay', 'Backstroke Relay', 'Freestyle Relay');
+    return in_array($sport, $relays);
+}
+
 
 

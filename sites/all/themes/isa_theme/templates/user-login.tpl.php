@@ -11,5 +11,10 @@ $form['name']['#description'] = 'Enter your email address.';
 ?>
 <p><?php print render($intro_text); ?></p>
 <div class="isa_theme-user-login-form-wrapper">
+    <select>
+        <option selected value="ISA’s National Swimming Finals, London Olympic Park, 20.01.2018">
+            ISA’s National Swimming Finals, London Olympic Park, 20.01.2018
+        </option>
+    </select>
         <?php print drupal_render_children($form) ?>
 </div>
