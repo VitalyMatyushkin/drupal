@@ -93,6 +93,26 @@ a:hover {
     width: 100%;
 }
 
+.views-table td {
+    background: #ffffff;
+    border-bottom: solid 1px #c2c1c2;
+    line-height: 30px;
+    padding-top: 5px;
+}
+
+.views-table thead th {
+    background: #ffffff;
+    border-bottom: solid 2px #007abf;
+    color: #007abf;
+    font-weight: normal;
+    line-height: 30px;
+}
+
+.views-table thead a {
+    color: #007abf;
+    font-weight: normal;
+}
+
 /*---CONTENT---*/
 .l-main {
     padding-bottom: 150px;
