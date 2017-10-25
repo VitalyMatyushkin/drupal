@@ -27,5 +27,14 @@ function isa_theme_theme() {
 }
 
 function isa_theme_preprocess_user_login(&$vars) {
-    $vars['intro_text'] = t('Sign in');
+    $vars['intro_text'] = t('National Finals Registration Portal');
+    $vars['login_logo'] = path_to_theme()."/isa_logo_login.jpg";
+}
+
+/**
+ * this function was overridden for hiding tabs
+ * to return tabs - remove function
+ */
+function isa_theme_menu_local_tasks(&$variables) {
+    return '';
 }

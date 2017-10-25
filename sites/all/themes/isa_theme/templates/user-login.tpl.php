@@ -7,11 +7,19 @@
  */
 
 $form['name']['#title'] = 'Email address';
-$form['name']['#description'] = 'Enter your email address.';
+$form['name']['#description'] = '';
+$form['name']['#size'] = '';
+
+$form['pass']['#size'] = '';
+$form['pass']['#description'] = '';
 ?>
-<p><?php print render($intro_text); ?></p>
 <div class="isa_theme-user-login-form-wrapper">
-    <select>
+
+    <img class="isa_theme-user-login-logo" src="<?php print render($login_logo); ?>" alt="ISA Sport"/>
+    <h4 class="isa_theme-user-login-intro"><?php print render($intro_text); ?></h4>
+
+    <label for="choose_final" class="isa_theme-user-login-label">Choose final:</label>
+    <select id="choose_final" class="isa_theme-user-login-select" name="Choose final">
         <option selected value="ISA’s National Swimming Finals, London Olympic Park, 20.01.2018">
             ISA’s National Swimming Finals, London Olympic Park, 20.01.2018
         </option>

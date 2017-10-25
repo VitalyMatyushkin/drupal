@@ -5,8 +5,13 @@ html, body {
     margin: 0;
 }
 
+html {
+    position:relative;
+    min-height:100%;
+}
+
 body {
-    min-height: 100%;
+    height: 100%;
 }
 
 a {
@@ -90,7 +95,7 @@ a:hover {
 
 /*---CONTENT---*/
 .l-main {
-    padding-bottom: 30px;
+    padding-bottom: 150px;
 }
 
 /*---FOOTER---*/
@@ -106,4 +111,57 @@ a:hover {
     position: absolute;
     text-align: center;
     width: 100%;
+}
+
+/*---LOGIN_PAGE---*/
+.isa_theme-user-login-form-wrapper {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 250px;
+}
+
+.isa_theme-user-login-select {
+    width: 250px;
+    margin-bottom: 1em;
+}
+
+.isa_theme-user-login-label {
+    color: #333333;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.isa_theme-user-login-form-wrapper input {
+    box-sizing: border-box;
+    width: 250px;
+}
+
+.isa_theme-user-login-form-wrapper .form-submit {
+    background: #007abf;
+    border: solid 1px #164170;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    font-family: glober, sans-serif;
+}
+
+.isa_theme-user-login-logo {
+    height: auto;
+    max-width: 100%;
+    width: 280px;
+}
+
+.isa_theme-user-login-intro {
+    margin-top: 0;
+    text-align: center;
+}
+
+/*Hide header and title for front page - temporary crunch*/
+.front.not-logged-in .l-header {
+    display: none;
+}
+.front.not-logged-in h1 {
+    display: none;
 }
