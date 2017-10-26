@@ -281,6 +281,24 @@ function ISA_form_participant_node_form_alter(&$form, &$form_state, $form_id) {
 
         $form['field_school']['und']['#options'] = $school_array;
     }
+    $form['field_dob']['und'][0]['#ajax'] = array(
+        'callback' => 'ISA_form_participant_node_form_alter_callback',
+        'wrapper' => 'school_select'
+    );
+    if (isset($form_state['values']['field_dob']['und'][0]['value'])) {
+        $form['field_year_group']['und']['#options'] = array();
+        $dob = $form_state['values']['field_dob']['und'][0]['value'];
+        $vid = taxonomy_vocabulary_machine_name_load('year_group')->vid;
+        $terms = taxonomy_get_tree($vid);
+        foreach ($terms as $term) {
+            $date_to = taxonomy_term_load($term->tid)->field_to_date['und'][0]['value'];
+            $date_from = taxonomy_term_load($term->tid)->field_from_date['und'][0]['value'];
+            if ($dob >= $date_from AND $dob <= $date_to) {
+                $form['field_year_group']['und']['#options'] = [$term->tid => $term->name];
+            }
+        }
+    }
+    array_push($form['field_year_group']['#attributes']['class'], 'invisible-field');
     $form['actions']['submit']['#submit'][] = 'ISA_form_participant_node_form_submit';
 }
 
@@ -567,6 +585,7 @@ function ISA_views_pre_build(&$view) {
                 );
             }
         }
+
     }
 
 }
