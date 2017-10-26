@@ -60,6 +60,24 @@ input.form-text:focus, select:focus, textarea:focus {
     border-color: #1082c3;
 }
 
+.node-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.node-form .form-actions {
+    text-align: right;
+}
+
+.node-form input.form-text, .node-form select, .node-form textarea {
+    max-width: 400px;
+    width: 100%;
+}
+
+.view-filters input.form-text {
+    max-width: 220px;
+}
+
 html.js .form-autocomplete {
     background-image: none;
 }
@@ -75,7 +93,7 @@ html.js .form-autocomplete {
     line-height: 50px;
     font-family: glober, sans-serif;
     padding: 0 25px;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .form-submit:hover {
@@ -193,6 +211,20 @@ html.js .form-autocomplete {
 /*---CONTENT---*/
 .l-main {
     padding-bottom: 150px;
+}
+
+.l-content h1 {
+    color: #008ed3;
+    display: flex;
+}
+
+.l-content h1::after {
+    background: #008ed3;
+    content: "";
+    flex: 1;
+    height: 2px;
+    margin: 15px 0 0 15px;
+    width: 100%;
 }
 
 /*---FOOTER---*/
