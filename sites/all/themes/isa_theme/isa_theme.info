@@ -19,3 +19,7 @@ regions[footer] = 'Footer'
 zones[header] = 'Header'
 zones[content] = 'Content'
 zones[footer] = 'Footer'
+
+; Styles
+stylesheets[all][] = css/isa_fonts.css
+stylesheets[all][] = css/isa_style.css
