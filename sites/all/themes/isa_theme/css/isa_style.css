@@ -75,7 +75,12 @@ input.form-text:focus, select:focus, textarea:focus {
 }
 
 .view-filters input.form-text {
-    max-width: 220px;
+    max-width: 210px;
+}
+
+.view-filters .form-item-title input,
+.view-filters .form-item-field-last-name-value input {
+    width: 120px;
 }
 
 html.js .form-autocomplete {
@@ -284,6 +289,7 @@ html.js .form-autocomplete {
 
 .isa_theme-add-manager-btn {
     background: #fff;
+    cursor: pointer;
     padding-left: 5px;
     position: absolute;
     right: 0;
