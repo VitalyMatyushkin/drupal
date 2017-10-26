@@ -18,6 +18,13 @@
  *
  * @ingroup views_templates
  */
+
+global $user;
+$account = user_load($user->uid);
+$classRegional = "";
+if (in_array('regional admin', $account->roles)) {
+    $classRegional = " regional";
+}
 ?>
 <?php if (!empty($q)): ?>
   <?php
@@ -26,7 +33,7 @@
     print $q;
   ?>
 <?php endif; ?>
-<div class="views-exposed-form">
+<div class="views-exposed-form<?= $classRegional; ?>">
   <div class="views-exposed-widgets clearfix">
     <?php foreach ($widgets as $id => $widget): ?>
       <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?>">

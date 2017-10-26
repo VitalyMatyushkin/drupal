@@ -23,6 +23,13 @@ function ISA_menu(){
         'expanded' => TRUE,
     );
 
+    $items['team_managers/delete/%'] = array(
+        'title'           => t('remove_manager'),
+        'page callback'   => 'delete_manager',
+        'access callback' => TRUE,
+        'type'            => MENU_CALLBACK,
+    );
+
     $items['participants/add'] = array(
         'title' => 'Add participant',
         'page callback' => '_add_participant',
@@ -37,11 +44,29 @@ function ISA_menu(){
         'expanded' => TRUE,
     );
 
+    $items['participants/delete/%'] = array(
+        'title'           => t('remove_participant'),
+        'page callback'   => 'delete_participant',
+        'access callback' => TRUE,
+        'type'            => MENU_CALLBACK,
+    );
 
     return $items;
 }
 
 $GLOBALS['regions'] = array('East Anglia', 'London North', 'London South', 'London West', 'Midlands', 'North', 'South West');
+
+function delete_manager() {
+    $nid = $nid = arg(2);
+    node_delete($nid);
+    drupal_goto("team_managers");
+}
+
+function delete_participant() {
+    $nid = $nid = arg(2);
+    node_delete($nid);
+    drupal_goto("participants");
+}
 
 function _add_manager($content = NULL) {
     module_load_include('inc', 'node', 'node.pages');
@@ -73,11 +98,15 @@ function _add_manager($content = NULL) {
         }
     }
     unset($form['actions']['preview']);
+    $form['actions']['cancel'] = array(
+        '#type'   => 'markup',
+        '#weight'   => 20,
+        '#markup' => '<input type="button" value="Cancel" id="cancel" onclick="goBack()">'
+    );
     $output = render($form);
 
     return $output;
 }
-
 function get_tid_by_name($name) {
     $term = taxonomy_get_term_by_name($name);
     $tid = array_shift($term)->tid;
@@ -114,6 +143,11 @@ function _edit_manager() {
             unset($form['options'][$key]);
         }
     }
+    $form['actions']['cancel'] = array(
+        '#type'   => 'markup',
+        '#weight'   => 20,
+        '#markup' => '<input type="button" value="Cancel" id="cancel" onclick="goBack()">'
+    );
     unset($form['actions']['preview']);
     $output = render($form);
 
@@ -142,6 +176,11 @@ function _add_participant($content = NULL) {
             unset($form['options'][$key]);
         }
     }
+    $form['actions']['cancel'] = array(
+        '#type'   => 'markup',
+        '#weight'   => 20,
+        '#markup' => '<input type="button" value="Cancel" id="cancel" onclick="goBack()">'
+    );
     unset($form['actions']['preview']);
     $output = render($form);
 
@@ -172,6 +211,11 @@ function _edit_participant($content = NULL) {
             unset($form['options'][$key]);
         }
     }
+    $form['actions']['cancel'] = array(
+        '#type'   => 'markup',
+        '#weight'   => 20,
+        '#markup' => '<input type="button" value="Cancel" id="cancel" onclick="goBack()">'
+    );
     unset($form['actions']['preview']);
     $output = render($form);
 
@@ -270,44 +314,40 @@ function ISA_form_team_manager_node_form_submit($form, &$form_state) {
  * @param $view
  */
 function ISA_views_pre_render(&$view) {
-    if ('team_managers' == $view->name && 'page' == $view->current_display) {
-        if(arg(0) == 'team_managers') {
-            global $user;
-            $account = user_load($user->uid);
-            if (in_array('regional admin', $account->roles)) {
-                $regionId = $account->field_region['und'][0]['value'];
-                $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
-                $output = array();
-                foreach($view->result as $item) {
-                    $field_area = field_get_items('node', node_load($item->nid), 'field_area');
-                    if($field_area[0]['tid'] == $regionTid) {
-                        $output[] = $item;
-                    }
+    if ('team_managers' == $view->name) {
+        global $user;
+        $account = user_load($user->uid);
+        if (in_array('regional admin', $account->roles)) {
+            $regionId = $account->field_region['und'][0]['value'];
+            $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+            $output = array();
+            foreach($view->result as $item) {
+                $field_area = field_get_items('node', node_load($item->nid), 'field_area');
+                if($field_area[0]['tid'] == $regionTid) {
+                    $output[] = $item;
                 }
-                $view->result = $output;
-
             }
+            $view->result = $output;
+
         }
         $view->result =  ISA_pager_array_splice($view->result, 10);
     }
 
-    if ('participants' == $view->name && 'page' == $view->current_display) {
-        if(arg(0) == 'participants') {
-            global $user;
-            $account = user_load($user->uid);
-            if (in_array('regional admin', $account->roles)) {
-                $regionId = $account->field_region['und'][0]['value'];
-                $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
-                $output = array();
-                foreach($view->result as $item) {
-                    $field_area = field_get_items('node', node_load($item->nid), 'field_area_participant');
-                    if($field_area[0]['tid'] == $regionTid) {
-                        $output[] = $item;
-                    }
+    if ('participants' == $view->name) {
+        global $user;
+        $account = user_load($user->uid);
+        if (in_array('regional admin', $account->roles)) {
+            $regionId = $account->field_region['und'][0]['value'];
+            $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+            $output = array();
+            foreach($view->result as $item) {
+                $field_area = field_get_items('node', node_load($item->nid), 'field_area_participant');
+                if($field_area[0]['tid'] == $regionTid) {
+                    $output[] = $item;
                 }
-                $view->result = $output;
-
             }
+            $view->result = $output;
+
         }
         $view->result =  ISA_pager_array_splice($view->result, 10);
     }
@@ -355,7 +395,6 @@ function ISA_block_view($delta = '') {
 }
 function ISA_check_form($form, $form_state){
     $form['check_table'] = array(
-        '#type'   => 'fieldset',
         '#prefix' => '<div id="errors_list">',
         '#suffix' => '</div>',
     );
@@ -490,6 +529,46 @@ function _is_individual_sport($sport) {
 function _is_relay($sport) {
     $relays = array('Breaststroke Relay', 'Backstroke Relay', 'Freestyle Relay');
     return in_array($sport, $relays);
+}
+
+function ISA_views_pre_build(&$view) {
+    if ('team_managers' == $view->name) {
+        global $user;
+        $account = user_load($user->uid);
+        if (in_array('regional admin', $account->roles)) {
+            $regionId = $account->field_region['und'][0]['value'];
+            $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+
+            $display = $view->current_display;
+            $filter_field = 'field_area_tid';
+            $new_value = $regionTid;
+
+            if (isset($view->display[$display]->handler->handlers['filter'][$filter_field])) {
+                $view->display[$display]->handler->handlers['filter'][$filter_field]->value = array(
+                    $new_value => $new_value,
+                );
+            }
+        }
+    }
+    if ('participants' == $view->name) {
+        global $user;
+        $account = user_load($user->uid);
+        if (in_array('regional admin', $account->roles)) {
+            $regionId = $account->field_region['und'][0]['value'];
+            $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+
+            $display = $view->current_display;
+            $filter_field = 'field_area_participant_tid';
+            $new_value = $regionTid;
+
+            if (isset($view->display[$display]->handler->handlers['filter'][$filter_field])) {
+                $view->display[$display]->handler->handlers['filter'][$filter_field]->value = array(
+                    $new_value => $new_value,
+                );
+            }
+        }
+    }
+
 }
 
 
