@@ -159,6 +159,18 @@ html.js .form-autocomplete {
     text-decoration: underline;
 }
 
+.l-region--header {
+    align-items: center;
+    display: flex;
+}
+
+.l-region--header--title {
+    color: #007abf;
+    flex: 1;
+    font-size: 20px;
+    text-align: left;
+}
+
 .isa_theme-header-title {
     display: inline-block;
 }
@@ -283,24 +295,40 @@ html.js .form-autocomplete {
     width: 100%;
 }
 
+.l-content.contextual-links-region .isa_theme--content--title--buttons {
+    margin-top: -60px;
+}
+
 .l-content.contextual-links-region .isa_theme-add-manager-btn {
-    top: -67px;
+    margin-top: -60px;
 }
 
 .isa_theme-add-manager-btn {
     background: #fff;
     cursor: pointer;
+    display: flex;
     padding-left: 5px;
     position: absolute;
     right: 0;
     top: -7px;
-    width: 85px;
+    width: 75px;
+}
+
+.isa_theme--content--title--buttons {
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    padding-left: 5px;
+    position: absolute;
+    right: 0;
+    top: -7px;
+    width: 120px;
 }
 
 .feed-icon {
     position: absolute;
     right: 0;
-    top: -3px;
+    top: -7px;
     width: 35px;
     height: 35px;
 }
@@ -376,6 +404,12 @@ html.js .form-autocomplete {
     display: none;
 }
 
+.error_log {
+    font-size: 18px;
+    margin:  20px 0;
+    text-align: center;
+}
+
 /*---TABLE FILTERS---*/
 .views-exposed-form .views-exposed-widget .form-submit {
     height: 40px;
@@ -387,4 +421,12 @@ html.js .form-autocomplete {
 /*Hide header and title for front page - temporary crunch*/
 .front.not-logged-in .l-header, .front.not-logged-in h1 {
     display: none;
+}
+
+.ajax-progress {
+    display: none;
+}
+
+.date-combo {
+    border: none;
 }
