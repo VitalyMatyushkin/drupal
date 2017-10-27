@@ -295,18 +295,34 @@ html.js .form-autocomplete {
     width: 100%;
 }
 
+.l-content.contextual-links-region .isa_theme--content--title--buttons {
+    margin-top: -60px;
+}
+
 .l-content.contextual-links-region .isa_theme-add-manager-btn {
-    top: -67px;
+    margin-top: -60px;
 }
 
 .isa_theme-add-manager-btn {
     background: #fff;
     cursor: pointer;
+    display: flex;
     padding-left: 5px;
     position: absolute;
     right: 0;
     top: -7px;
-    width: 85px;
+    width: 75px;
+}
+
+.isa_theme--content--title--buttons {
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    padding-left: 5px;
+    position: absolute;
+    right: 0;
+    top: -7px;
+    width: 120px;
 }
 
 .feed-icon {
