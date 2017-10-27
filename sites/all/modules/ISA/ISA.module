@@ -51,6 +51,13 @@ function ISA_menu(){
         'type'            => MENU_CALLBACK,
     );
 
+    $items['participants/check'] = array(
+        'title'           => t('check_participant'),
+        'page callback'   => 'check_participant_ajax',
+        'access callback' => TRUE,
+        'type'            => MENU_CALLBACK,
+    );
+
     return $items;
 }
 
@@ -66,6 +73,11 @@ function delete_participant() {
     $nid = $nid = arg(2);
     node_delete($nid);
     drupal_goto("participants");
+}
+
+function check_participant_ajax(){
+    $output = _show_errors();
+    drupal_json_output($output);
 }
 
 function _add_manager($content = NULL) {
@@ -406,39 +418,12 @@ function ISA_block_view($delta = '') {
     $block = array();
 
     if ($delta == 'participants') {
-        $block['content'] = drupal_get_form('ISA_check_form');
+        $block['content'] = '<div class="error-list"></div>';
     }
 
     return $block;
 }
-function ISA_check_form($form, $form_state){
-    $form['check_table'] = array(
-        '#prefix' => '<div id="errors_list">',
-        '#suffix' => '</div>',
-    );
 
-    $form['check_table']['submit'] = array(
-        '#id'         => 'check_button',
-        '#type'       => 'submit',
-        '#value'      => t('Control'),
-        '#ajax'       => array(
-            'callback' => 'ISA_check_form_callback',
-            'wrapper'  => 'errors_list',
-        ),
-    );
-    $form['check_table']['errors'] = array(
-        '#type'   => 'markup',
-        '#prefix' => '<div id="errors_student">',
-        '#suffix' => '</div>',
-        '#markup' => '',
-    );
-
-    return $form;
-}
-function ISA_check_form_callback($form, &$form_state){
-    $form['check_table']['errors']['#markup'] = _show_errors();
-    return $form['check_table'];
-}
 function _show_errors(){
     $log = '';
     $errors = _check_participants();
