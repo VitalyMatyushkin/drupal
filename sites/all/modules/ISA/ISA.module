@@ -446,6 +446,13 @@ function _check_participants() {
     $nodes2 = $nodes;
     $res = array();
     $helper_sport = array();
+    global $user;
+    $account = user_load($user->uid);
+    $regionTid = -1;
+    if (in_array('regional admin', $account->roles)) {
+        $regionId = $account->field_region['und'][0]['value'];
+        $regionTid = get_tid_by_name($GLOBALS['regions'][$regionId]);
+    }
     foreach ($nodes as $key => $part){
         foreach ($nodes2 as $key2 => $part2){
             if ($key < $key2){
@@ -453,6 +460,10 @@ function _check_participants() {
                 $lname =$part-> field_last_name['und'][0]['value'];
                 $school_tid = $part->field_school['und'][0]['tid'];
                 $dob = $part->field_dob['und'][0]['value'];
+                $area = $part->field_area_participant['und'][0]['tid'];
+                if ($area != $regionTid && $regionTid != -1){
+                    break;
+                }
                 if ($fname == $part2->title &&
                     $lname == $part2->field_last_name['und'][0]['value'] &&
                     $school_tid == $part2->field_school['und'][0]['tid'] &&
