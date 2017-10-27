@@ -575,5 +575,14 @@ function ISA_views_pre_build(&$view) {
 
 }
 
+function ISA_node_validate($node, $form) {
+    $value = $node->field_dob['und'][0]['value'];
+    $max = '2008-08-31T00:00:00';
+    $min = '1998-09-01T00:00:00';
+    if ($value < $min || $value > $max) {
+        form_set_error('field_dob', t('DOB is not valid for this event'));
+    }
+}
+
 
 
